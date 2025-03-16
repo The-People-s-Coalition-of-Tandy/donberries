@@ -333,6 +333,115 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
+        
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #333;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Media queries for responsive design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                background-position-x: 20%;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 20px;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .about-container, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-content, .contact-info, .contact-form {
+                flex: none;
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+            }
+            
+            .footer-col {
+                margin-bottom: 30px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -347,8 +456,13 @@
                 </div>
                 <div class="logo-text">Don Howard <span>Berries</span></div>
             </div>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <nav>
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="#about">About</a></li>
                     <li><a href="#products">Our Berries</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
@@ -508,5 +622,25 @@
             <p>&copy; 2023 Don Howard Berries. All rights reserved. "Life is better with berries!"™</p>
         </div>
     </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('#nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
