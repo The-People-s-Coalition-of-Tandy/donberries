@@ -3,644 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don Howard Berries - Nature's Sweetest Gift</title>
+    <title>Don Howard Berries's BERRY PARADISE!!!</title>
     <style>
-        /* Reset and base styles */
-        * {
+        body {
+            background-color: #ffffff;
+            /* font-family: "Comic Sans MS", "Comic Sans", cursive; */
+            color: #000080;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            color: #333;
-            line-height: 1.6;
         }
         
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            width: 800px;
+            /* margin: 0 auto; */
+            background-color: #ffffff;
+            /* border: 5px solid #ff0000; */
+            padding: 10px;
         }
         
-        /* Header styles */
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #8b0000;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .logo-icon {
-            width: 30px;
-            height: 30px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo-text {
-            font-family: 'Georgia', serif;
-            letter-spacing: 0.5px;
-        }
-        
-        .logo span {
-            color: #228B22;
-            font-style: italic;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #8b0000;
-        }
-        
-        /* Hero section */
-        .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('don3.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            display: flex;
-            align-items: center;
+        h1, h2, h3 {
             text-align: center;
-            color: white;
+            color: #000000;
+            /* text-shadow: 2px 2px #ffff00; */
         }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #8b0000;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #6d0000;
-        }
-        
-        /* About section */
-        .about {
-            padding: 80px 0;
-            background-color: #f9f9f9;
-        }
-        
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .about-content {
-            flex: 1;
-        }
-        
-        .section-title {
+
+        h1 {
             font-size: 36px;
-            margin-bottom: 20px;
-            color: #333;
+            color: #fff;
         }
         
-        /* Products section */
-        .products {
-            padding: 80px 0;
-        }
-        
-        .products-title {
+        .header {
+            background-color: #1900ff;
+            padding: 10px;
             text-align: center;
-            margin-bottom: 50px;
+            border-bottom: 3px dashed #0000ff;
         }
         
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+        .navigation {
+            background-color: #ff99cc;
+            padding: 5px;
+            margin: 10px 0;
+            text-align: center;
         }
         
-        .product-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .product-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-info h3 {
-            margin-bottom: 10px;
-        }
-        
-        .product-info p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .product-price {
+        .navigation a {
+            color: #0000ff;
             font-weight: bold;
-            color: #8b0000;
-            font-size: 18px;
+            margin: 0 10px;
+            text-decoration: none;
         }
         
-        /* Testimonials section */
-        .testimonials {
-            padding: 80px 0;
-            background-color: #f9f9f9;
+        .navigation a:hover {
+            text-decoration: underline;
+            color: #ff0000;
+        }
+        
+        .content {
+            padding: 10px;
+        }
+        
+        .welcome {
             text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
         }
         
-        .testimonials-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .about-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .about-table td {
+            border: 2px solid #0000ff;
+            padding: 10px;
+            vertical-align: top;
+        }
+        
+        .berry-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .berry-table th {
+            background-color: #ff9900;
+            border: 2px solid #0000ff;
+            padding: 5px;
+        }
+        
+        .berry-table td {
+            border: 2px solid #0000ff;
+            padding: 5px;
+            text-align: center;
         }
         
         .testimonial {
-            margin-bottom: 40px;
-        }
-        
-        .testimonial p {
-            font-style: italic;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-        }
-        
-        /* Contact section */
-        .contact {
-            padding: 80px 0;
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-info p {
-            margin-bottom: 20px;
-        }
-        
-        .contact-form {
-            flex: 1;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
+            background-color: #ffccff;
+            border: 2px dotted #ff0000;
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
-        }
-        
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .footer-col {
-            flex: 1;
-            margin-right: 30px;
-        }
-        
-        .footer-col h3 {
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col ul li a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-col ul li a:hover {
-            color: white;
-        }
-        
-        .copyright {
+            margin: 10px 0;
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            font-style: italic;
         }
         
-        /* Mobile menu styles */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
+        .contact {
+            background-color: #ccccff;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
         }
         
-        .mobile-menu-toggle span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background-color: #333;
-            border-radius: 3px;
-            transition: all 0.3s ease;
+        .footer {
+            background-color: #ffff99;
+            padding: 10px;
+            text-align: center;
+            border-top: 3px dashed #0000ff;
+            font-size: 12px;
+            margin-top: 20px;
         }
-        
-        /* Media queries for responsive design */
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: flex;
-            }
 
-            .hero {
-                background-position-x: 20%;
-            }
-            
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background-color: white;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                padding: 20px;
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .about-container, .contact-container {
-                flex-direction: column;
-            }
-            
-            .about-image, .about-content, .contact-info, .contact-form {
-                flex: none;
-                width: 100%;
-            }
-            
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-title {
-                font-size: 28px;
-            }
-            
-            .footer-container {
-                flex-direction: column;
-            }
-            
-            .footer-col {
-                margin-bottom: 30px;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
+        
+        .counter {
+            text-align: center;
+            margin: 10px 0;
         }
         
-        @media (max-width: 480px) {
-            .hero {
-                height: 400px;
-            }
-            
-            .hero h1 {
-                font-size: 28px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-            }
-            
-            .section-title {
-                font-size: 24px;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
+        .construction {
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        img {
+            border: 3px solid #0000ff;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100%" height="100%" fill="#8b0000">
-                        <path d="M12,2C7.03,2,3,6.03,3,11c0,4.17,2.85,7.67,6.71,8.67C9.91,19.88,10,20,10,20.13V22h4v-1.87 c0-0.13,0.09-0.25,0.21-0.26C18.15,18.67,21,15.17,21,11C21,6.03,16.97,2,12,2z M14,13.5c-0.83,0-1.5-0.67-1.5-1.5 c0-0.83,0.67-1.5,1.5-1.5s1.5,0.67,1.5,1.5C15.5,12.83,14.83,13.5,14,13.5z M8,11c-0.83,0-1.5-0.67-1.5-1.5C6.5,8.67,7.17,8,8,8 s1.5,0.67,1.5,1.5C9.5,10.33,8.83,11,8,11z M12,7.5c-0.83,0-1.5-0.67-1.5-1.5C10.5,5.17,11.17,4.5,12,4.5s1.5,0.67,1.5,1.5 C13.5,6.83,12.83,7.5,12,7.5z"/>
-                    </svg>
-                </div>
-                <div class="logo-text">Don Howard <span>Berries</span></div>
-            </div>
-            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Our Berries</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>DON HOWARD BERRIES' BERRY PARADISE</h1>
+            <p scrollamount="5" behavior="alternate" direction="left" style="color: #ffffff; font-weight: bold;">
+                WELCOME TO THE BEST BERRIES ON THE INTERNET. ESTABLISHED 2006!
+            </p>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Nature's Sweetest Gift</h1>
-            <p>Handpicked, organic berries grown with love in our family farm since 2006.</p>
-            <a href="#products" class="btn">Explore Our Berries</a>
+        
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="#about">ABOUT DON</a> |
+            <a href="#berries">MY BERRIES</a> |
+            <a href="#testimonials">HAPPY CUSTOMERS</a> |
+            <a href="#contact">CONTACT ME</a>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1595231776515-ddffb1f4eb73" alt="Don Howard in the berry fields">
+        
+        <!-- Welcome Section -->
+        <div class="content">
+            <div class="welcome">
+                <img src="don2.jpg" alt="Dancing Strawberry" width="300">
+                <p><b>WELCOME to my website.</b> I'm <u>Don Howard Berries</u>.</p>
+                <p class="blink" style="color: #ff0000; font-weight: bold;">Life is better with BERRIES!</p>
             </div>
-            <div class="about-content">
-                <h2 class="section-title">My Story</h2>
-                <p>Since 2006, I, Don Howard Berries, have dedicated my life to growing the finest berries in the country. What started as a small patch in my backyard has blossomed into a thriving family business.</p>
-                <p>Our secret? It's simple: sunshine, clean water, and my daily meditation and breathwork practice. Every berry is handpicked at the peak of ripeness to ensure maximum flavor and nutritional value.</p>
-                <p>I personally inspected each batch before it leaves our farm. That's the Don Howard Berries guarantee - berries so good, they'll change your life!</p>
-                <p>As I always say, "Life is better with berries!" And once you've tried Don Howard Berries, you'll never go back to ordinary fruit again.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <div class="products-title">
-                <h2 class="section-title">Our Premium Berries</h2>
-                <p>Discover the extraordinary taste of our carefully cultivated varieties</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('strawberries.jpg')"></div>
-                    <div class="product-info">
-                        <h3>Alpine Strawberries</h3>
-                        <p>Our signature strawberries, bursting with sweetness and picked at dawn for maximum flavor.</p>
-                        <div class="product-price">$8.99 per basket</div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('blueberries.avif')"></div>
-                    <div class="product-info">
-                        <h3>Blueberries</h3>
-                        <p>Deep blue, antioxidant-rich berries with a perfect balance of sweet and tart.</p>
-                        <div class="product-price">$9.99 per basket</div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('raspberries.jpg')"></div>
-                    <div class="product-info">
-                        <h3>Raspberries</h3>
-                        <p>Delicate, ruby-red raspberries with an intense aroma and melt-in-your-mouth texture.</p>
-                        <div class="product-price">$10.99 per basket</div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image" style="background-image: url('mix.webp')"></div>
-                    <div class="product-info">
-                        <h3>Don's Special Mix</h3>
-                        <p>My personal selection of the season's best berries, perfect for smoothies and desserts.</p>
-                        <div class="product-price">$12.99 per basket</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container testimonials-container">
-            <h2 class="section-title">What Our Customers Say</h2>
+<!--             
+            <div class="construction">
+                <img src="https://web.archive.org/web/20091027005940/http://www.geocities.com/ResearchTriangle/Facility/8687/Underconstruction/construction01.gif" alt="Under Construction" width="300">
+                <p><i>Some parts of this site are still growing... just like my berries!</i></p>
+            </div> -->
+            
+            <!-- About Section -->
+            <a name="about"></a>
+            <h2> About Don Howard Berries </h2>
+            <table class="about-table">
+                <tr>
+                    <td width="30%">
+                        <img src="don.jpg" alt="Don Howard in the berry fields" width="200">
+                    </td>
+                    <td>
+                        <p><b>I'm Don Howard Berries,</b>  and I've been growing the berries since 2006.</p>
+                        <p>What started as a small patch in my backyard has blossomed into a thriving family business!</p>
+                        <p>My secret? It's simple: sunshine, clean water, and my daily practice of breathwork and meditation. Every berry is handpicked by me at the peak of ripeness.</p>
+                        <p>I personally inspect each batch before it leaves our farm. That's the DON HOWARD BERRIES GUARANTEE.</p>
+                    </td>
+                </tr>
+            </table>
+            
+            <!-- Berries Section -->
+            <a name="berries"></a>
+            <h2> DON'S PREMIUM BERRIES </h2>
+            <p style="text-align: center; color: #ff0000;"><b>DISCOVER THE EXTRAORDINARY TASTE OF MY CAREFULLY CULTIVATED VARIETIES</b></p>
+            
+            <table class="berry-table">
+                <tr>
+                    <th>BERRY TYPE</th>
+                    <th>DESCRIPTION</th>
+                    <th>PRICE</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="strawberries.jpg" alt="Strawberries" width="100">
+                        <br><b>SUNRISE STRAWBERRIES</b>
+                    </td>
+                    <td>Our SIGNATURE strawberries, bursting with sweetness and picked at dawn for maximum flavor!</td>
+                    <td><span style="color: #ff0000; font-weight: bold;">$8.99</span><br>per basket</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="blueberries.avif" alt="Blueberries" width="100">
+                        <br><b>MIDNIGHT BLUEBERRIES</b>
+                    </td>
+                    <td>Deep blue, ANTIOXIDANT-RICH berries with a perfect balance of sweet and tart!</td>
+                    <td><span style="color: #ff0000; font-weight: bold;">$9.99</span><br>per basket</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="raspberries.jpg" alt="Raspberries" width="100">
+                        <br><b>ROYAL RASPBERRIES</b>
+                    </td>
+                    <td>Delicate, RUBY-RED raspberries with an intense aroma and melt-in-your-mouth texture!</td>
+                    <td><span style="color: #ff0000; font-weight: bold;">$10.99</span><br>per basket</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="mix.webp" alt="Berry Mix" width="100">
+                        <br><b>DON'S SPECIAL MIX</b>
+                    </td>
+                    <td>My personal selection of the season's best berries, perfect for smoothies and desserts!</td>
+                    <td><span style="color: #ff0000; font-weight: bold;">$12.99</span><br>per basket</td>
+                </tr>
+            </table>
+            
+            <!-- Testimonials Section -->
+            <a name="testimonials"></a>
+            <h2> HAPPY CUSTOMERS </h2>
+            
             <div class="testimonial">
-                <p>"I've been buying berries for 30 years, and nothing compares to Don Howard Berries's. They've completely transformed my morning routine. I can't start my day without them now!"</p>
-                <div class="testimonial-author">- Martha Johnson</div>
+                <p>"I've been buying berries for 30 years, and NOTHING compares to Don Howard's. They've COMPLETELY transformed my morning routine. I can't start my day without them now!!!"</p>
+                <p><b>- Martha Johnson</b></p>
             </div>
+            
             <div class="testimonial">
-                <p>"These berries cured my seasonal allergies! Don Howard Berries must be growing them with magic. My children refuse to eat any other fruit now."</p>
-                <div class="testimonial-author">- James Wilson</div>
+                <p>"These berries cured my seasonal allergies and improved my eyesight! Don Howard Berries must be growing them with magic. My children refuse to eat any other fruit now!!!"</p>
+                <p><b>- James Wilson</b></p>
             </div>
+            
             <div class="testimonial">
-                <p>"After trying Don Howard Berries, I finally understood what real fruit should taste like. I drive 50 miles every weekend just to get my berry fix. Worth every mile!"</p>
-                <div class="testimonial-author">- Susan Miller</div>
+                <p>"After trying Don Howard Berries, I FINALLY understood what REAL fruit should taste like. I drive 50 MILES every weekend just to get my berry fix. Worth EVERY mile!!!"</p>
+                <p><b>- Susan Miller</b></p>
             </div>
+            
+            <!-- Contact Section -->
+            <a name="contact"></a>
+            <h2> CONTACT DON </h2>
+            
+            <div class="contact">
+                <p><b>Want to experience the DON HOWARD BERRIES difference?</b></p>
+                <p>CONTACT me to place an order or VISIT our farm!</p>
+                <!-- <p><b>Address:</b> 1234 Berry Lane, Fruitville, CA 95678</p> -->
+                <!-- <p><b>Phone:</b> (555) 123-4567</p> -->
+                <p><b>Email:</b> <a href="mailto:don@dhberry.biz" style="color: #0000ff;">don@dhberry.biz</a></p>
+                <p><b>Farm Hours:</b> Thursday-Sunday, 9am-5pm</p>
+            </div>
+            
+            <!-- <div class="counter">
+                <p><b>You are visitor number:</b></p>
+                <img src="https://web.archive.org/web/20091027012912/http://www.geocities.com/ResearchTriangle/Facility/8687/Underconstruction/counter04.gif" alt="Visitor Counter" width="150">
+            </div> -->
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container contact-container">
-            <div class="contact-info">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>Want to experience the Don Howard Berries difference? Contact us to place an order or visit our farm.</p>
-                <!-- <p><strong>Address:</strong> 1234 Berry Lane, Fruitville, CA 95678</p> -->
-                <!-- <p><strong>Phone:</strong> (555) 123-4567</p> -->
-                <p><strong>Email:</strong> don@dhberry.biz</p>
-                <!-- <p><strong>Farm Hours:</strong> Thursday-Sunday, 9am-5pm</p> -->
-            </div>
-            <div class="contact-form">
-                <h3>Send Us a Message</h3>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-col">
-                <h3>Don Howard Berries</h3>
-                <p>Growing nature's sweetest gift since 2006. Family owned and operated with pride.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#products">Our Berries</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Berry Care Tips</h3>
-                <ul>
-                    <li><a href="#">Storing Berries</a></li>
-                    <li><a href="#">Berry Recipes</a></li>
-                    <li><a href="#">Health Benefits</a></li>
-                    <li><a href="#">Berry Newsletter</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
+        
+        <!-- Footer -->
+        <div class="footer">
             <p>&copy; 2023 Don Howard Berries. All rights reserved. "Life is better with berries!"™</p>
+            <p>Last updated: April 12, 2023</p>
         </div>
-    </footer>
-
-    <!-- JavaScript for mobile menu -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const navMenu = document.getElementById('nav-menu');
-            
-            mobileMenuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close menu when clicking on a link
-            const navLinks = document.querySelectorAll('#nav-menu a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                });
-            });
-        });
-    </script>
+    </div>
 </body>
 </html>
