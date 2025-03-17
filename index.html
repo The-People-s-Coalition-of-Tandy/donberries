@@ -14,11 +14,13 @@
         }
         
         .container {
-            width: 800px;
-            /* margin: 0 auto; */
+            width: 100%;
+            max-width: 800px;
+            margin: 0 0;
             background-color: #ffffff;
             /* border: 5px solid #ff0000; */
             padding: 10px;
+            box-sizing: border-box;
         }
         
         h1, h2, h3 {
@@ -28,7 +30,7 @@
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 2rem;
             color: #fff;
         }
         
@@ -44,12 +46,15 @@
             padding: 5px;
             margin: 10px 0;
             text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .navigation a {
             color: #0000ff;
             font-weight: bold;
-            margin: 0 10px;
+            margin: 5px 10px;
             text-decoration: none;
         }
         
@@ -122,7 +127,6 @@
             font-size: 12px;
             margin-top: 20px;
         }
-
         
         .counter {
             text-align: center;
@@ -136,6 +140,60 @@
         
         img {
             border: 3px solid #0000ff;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .marquee {
+            color: #ffffff;
+            font-weight: bold;
+            /* overflow: hidden; */
+            /* white-space: nowrap; */
+            /* animation: marquee 15s linear infinite; */
+            /* display: block; */
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @media (max-width: 600px) {
+            .about-table, .about-table tbody, .about-table tr, .about-table td {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .berry-table, .berry-table tbody, .berry-table tr, .berry-table th, .berry-table td {
+                display: block;
+                width: 100%;
+            }
+            
+            .berry-table tr {
+                margin-bottom: 20px;
+                border-bottom: 4px solid #0000ff;
+            }
+            
+            .berry-table th {
+                display: none;
+            }
+            
+            .navigation {
+                flex-direction: column;
+            }
+            
+            .navigation a {
+                margin: 5px 0;
+            }
+        }
+        
+        .blink {
+            /* animation: blinker 1s linear infinite; */
+        }
+        
+        @keyframes blinker {
+            50% { opacity: 0; }
         }
     </style>
 </head>
@@ -144,16 +202,16 @@
         <!-- Header -->
         <div class="header">
             <h1>DON HOWARD BERRIES' BERRY PARADISE</h1>
-            <p scrollamount="5" behavior="alternate" direction="left" style="color: #ffffff; font-weight: bold;">
+            <marquee class="marquee">
                 WELCOME TO THE BEST BERRIES ON THE INTERNET. ESTABLISHED 2006!
-            </p>
+            </marquee>
         </div>
         
         <!-- Navigation -->
         <div class="navigation">
-            <a href="#about">ABOUT DON</a> |
-            <a href="#berries">MY BERRIES</a> |
-            <a href="#testimonials">HAPPY CUSTOMERS</a> |
+            <a href="#about">ABOUT DON</a>
+            <a href="#berries">MY BERRIES</a>
+            <a href="#testimonials">HAPPY CUSTOMERS</a>
             <a href="#contact">CONTACT ME</a>
         </div>
         
@@ -164,18 +222,13 @@
                 <p><b>WELCOME to my website.</b> I'm <u>Don Howard Berries</u>.</p>
                 <p class="blink" style="color: #ff0000; font-weight: bold;">Life is better with BERRIES!</p>
             </div>
-<!--             
-            <div class="construction">
-                <img src="https://web.archive.org/web/20091027005940/http://www.geocities.com/ResearchTriangle/Facility/8687/Underconstruction/construction01.gif" alt="Under Construction" width="300">
-                <p><i>Some parts of this site are still growing... just like my berries!</i></p>
-            </div> -->
             
             <!-- About Section -->
-            <a name="about"></a>
+            <a name="about" id="about"></a>
             <h2> About Don Howard Berries </h2>
             <table class="about-table">
                 <tr>
-                    <td width="30%">
+                    <td>
                         <img src="don.jpg" alt="Don Howard in the berry fields" width="200">
                     </td>
                     <td>
@@ -188,7 +241,7 @@
             </table>
             
             <!-- Berries Section -->
-            <a name="berries"></a>
+            <a name="berries" id="berries"></a>
             <h2> DON'S PREMIUM BERRIES </h2>
             <p style="text-align: center; color: #ff0000;"><b>DISCOVER THE EXTRAORDINARY TASTE OF MY CAREFULLY CULTIVATED VARIETIES</b></p>
             
@@ -201,7 +254,7 @@
                 <tr>
                     <td>
                         <img src="strawberries.jpg" alt="Strawberries" width="100">
-                        <br><b>SUNRISE STRAWBERRIES</b>
+                        <br><b>STRAWBERRIES</b>
                     </td>
                     <td>Our SIGNATURE strawberries, bursting with sweetness and picked at dawn for maximum flavor!</td>
                     <td><span style="color: #ff0000; font-weight: bold;">$8.99</span><br>per basket</td>
@@ -209,7 +262,7 @@
                 <tr>
                     <td>
                         <img src="blueberries.avif" alt="Blueberries" width="100">
-                        <br><b>MIDNIGHT BLUEBERRIES</b>
+                        <br><b>BLUEBERRIES</b>
                     </td>
                     <td>Deep blue, ANTIOXIDANT-RICH berries with a perfect balance of sweet and tart!</td>
                     <td><span style="color: #ff0000; font-weight: bold;">$9.99</span><br>per basket</td>
@@ -217,7 +270,7 @@
                 <tr>
                     <td>
                         <img src="raspberries.jpg" alt="Raspberries" width="100">
-                        <br><b>ROYAL RASPBERRIES</b>
+                        <br><b>RASPBERRIES</b>
                     </td>
                     <td>Delicate, RUBY-RED raspberries with an intense aroma and melt-in-your-mouth texture!</td>
                     <td><span style="color: #ff0000; font-weight: bold;">$10.99</span><br>per basket</td>
@@ -233,7 +286,7 @@
             </table>
             
             <!-- Testimonials Section -->
-            <a name="testimonials"></a>
+            <a name="testimonials" id="testimonials"></a>
             <h2> HAPPY CUSTOMERS </h2>
             
             <div class="testimonial">
@@ -252,22 +305,15 @@
             </div>
             
             <!-- Contact Section -->
-            <a name="contact"></a>
+            <a name="contact" id="contact"></a>
             <h2> CONTACT DON </h2>
             
             <div class="contact">
                 <p><b>Want to experience the DON HOWARD BERRIES difference?</b></p>
                 <p>CONTACT me to place an order or VISIT our farm!</p>
-                <!-- <p><b>Address:</b> 1234 Berry Lane, Fruitville, CA 95678</p> -->
-                <!-- <p><b>Phone:</b> (555) 123-4567</p> -->
                 <p><b>Email:</b> <a href="mailto:don@dhberry.biz" style="color: #0000ff;">don@dhberry.biz</a></p>
                 <p><b>Farm Hours:</b> Thursday-Sunday, 9am-5pm</p>
             </div>
-            
-            <!-- <div class="counter">
-                <p><b>You are visitor number:</b></p>
-                <img src="https://web.archive.org/web/20091027012912/http://www.geocities.com/ResearchTriangle/Facility/8687/Underconstruction/counter04.gif" alt="Visitor Counter" width="150">
-            </div> -->
         </div>
         
         <!-- Footer -->
